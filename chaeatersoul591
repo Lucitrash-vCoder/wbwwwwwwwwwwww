@@ -1,0 +1,76 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local AAA = Instance.new("TextLabel")
+local auto = Instance.new("TextButton")
+local thing = Instance.new("TextBox")
+local TextLabel = Instance.new("TextLabel")
+local heal = Instance.new("TextButton")
+
+	--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.223762378, 0, 0.171107993, 0)
+Frame.Size = UDim2.new(0, 151, 0, 169)
+Frame.Active = true
+Frame.Draggable = true
+
+AAA.Name = "AAA"
+AAA.Parent = Frame	AAA.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AAA.Size = UDim2.new(0, 151, 0, 51)	AAA.Font = Enum.Font.SourceSans
+AAA.Text = "made this in 2 secnonds sricpt"
+AAA.TextColor3 = Color3.fromRGB(0, 0, 0)
+AAA.TextSize = 14.000
+
+auto.Name = "auto"
+auto.Parent = Frame
+auto.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+auto.Position = UDim2.new(0, 0, 0.426035494, 0)
+auto.Size = UDim2.new(0, 151, 0, 50)
+auto.Font = Enum.Font.SourceSans
+auto.Text = "autofarm ig?"
+auto.TextColor3 = Color3.fromRGB(0, 0, 0)
+auto.TextSize = 14.000
+auto.MouseButton1Down:connect(function()
+		while true do
+			game:GetService("Players").LocalPlayer.Character.sword.Handle.pr.RemoteEvent:FireServer()
+			wait()
+		end
+	end)
+thing.Name = "thing"
+thing.Parent = Frame
+thing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+thing.Position = UDim2.new(0, 0, 0.704142034, 0)
+thing.Size = UDim2.new(0, 151, 0, 21)
+thing.Font = Enum.Font.SourceSans
+thing.Text = ""
+thing.TextColor3 = Color3.fromRGB(0, 0, 0)
+thing.TextSize = 14.000
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Position = UDim2.new(0, 0, 0.893491149, 0)
+TextLabel.Size = UDim2.new(0, 151, 0, 18)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "credits: cheatersoul.com"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+heal.Name = "heal"
+heal.Parent = Frame
+heal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+heal.Position = UDim2.new(0, 0, 0.605911374, 0)
+heal.Size = UDim2.new(0, 151, 0, 50)
+heal.Font = Enum.Font.SourceSans
+heal.Text = "click and it spams heal remote"
+heal.TextColor3 = Color3.fromRGB(0, 0, 0)
+heal.TextSize = 14.000
+heal.MouseButton1Down:connect(function()
+	while true do
+		workspace.__EVENTS.Heal:FireServer()
+		wait()
+		end
+end)
